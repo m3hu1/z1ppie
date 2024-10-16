@@ -33,15 +33,8 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden h-[40rem]">
       <TypewriterEffectSmooth words={words} />
-      <div className="z-10 text-sm sm:text-base">
-        <a href="/about" className="font-medium underline underline-offset-4">
-          Click here
-        </a>{" "}
-        to learn more about how z1ppie works.
-      </div>
       <div className="mt-8 gap-3 flex justify-center z-10">
         <Link href="/share">
-          {/* <Button size="lg">Start sharing</Button> */}
           <EyeCatchingButton_v1>Start sharing</EyeCatchingButton_v1>
         </Link>
         <Link
