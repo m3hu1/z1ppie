@@ -23,10 +23,8 @@ import FileUploadBtn from "./FUButton";
 import FileDownload from "./FD";
 import ShareLink from "./ShareLink";
 import { useSearchParams } from "next/navigation";
-import { Dots_v2 } from "@/components/ui/dots2";
 import { Dots_v3 } from "@/components/ui/dots";
 import { EyeCatchingButton_v1 } from "@/components/ui/shimmerButton";
-import { EyeCatchingButton_v2 } from "@/components/ui/shimmerButton2";
 
 const ShareCard = () => {
   const userDetails = useSocket();

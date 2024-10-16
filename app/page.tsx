@@ -30,7 +30,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center overflow-hidden h-[45rem]">
+    <div className="flex flex-col items-center justify-center overflow-hidden h-[40rem]">
       <SparklesCore
         id="tsparticlesfullpage"
         background="transparent"
