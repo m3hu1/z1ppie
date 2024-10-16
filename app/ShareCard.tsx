@@ -20,6 +20,8 @@ import FileUploadBtn from "./FUButton";
 import FileDownload from "./FD";
 import ShareLink from "./ShareLink";
 import { useSearchParams } from "next/navigation";
+import { Dots_v2 } from "@/components/ui/dots2";
+import { Dots_v3 } from "@/components/ui/dots";
 
 const ShareCard = () => {
   const userDetails = useSocket();
@@ -42,6 +44,16 @@ const ShareCard = () => {
   const [fileReceiving, setfileReceiving] = useState(false);
   const [setname] = useState<any>();
   const searchParams = useSearchParams();
+
+  const [showContent, setShowContent] = useState(false); // State to control visibility
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true); // Set to true after 1 second
+    }, 1000);
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
 
   const workerRef = useRef<Worker>();
 
@@ -328,7 +340,7 @@ const ShareCard = () => {
                 <Label htmlFor="name">My Token</Label>
                 <div className="flex flex-row justify-left items-center space-x-2">
                   <div className="flex border rounded-md px-3 py-2 text-sm h-10 w-full bg-muted">
-                    {userId ? userId : "Generating unique token..."}
+                    {showContent ? (userId ? userId : <Dots_v3 />) : <Dots_v3 />}       
                   </div>
                   <Button
                     variant="outline"

@@ -2,7 +2,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import { GithubIcon } from "lucide-react";
+import { Eye, GithubIcon } from "lucide-react";
+import { SiteFooter } from "./Footer";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { EyeCatchingButton_v1 } from "@/components/ui/shimmerButton";
 
 const Home = () => {
   const words = [
@@ -30,21 +33,28 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden h-[40rem]">
       <TypewriterEffectSmooth words={words} />
+      <div className="z-10 text-sm sm:text-base">
+        <a href="/about" className="font-medium underline underline-offset-4">
+          Click here
+        </a>{" "}
+        to learn more about how z1ppie works.
+      </div>
       <div className="mt-8 gap-3 flex justify-center z-10">
         <Link href="/share">
-          <Button size="lg">Start sharing</Button>
+          {/* <Button size="lg">Start sharing</Button> */}
+          <EyeCatchingButton_v1>Start sharing</EyeCatchingButton_v1>
         </Link>
-
-        <Button size="lg" variant={"outline"} className="flex items-center">
-          <Link
-            href={"https://github.com/m3hu1/z1ppie"}
-            className="flex items-center"
-          >
+        <Link
+          href={"https://github.com/m3hu1/z1ppie"}
+          className="flex items-center"
+        >
+          <EyeCatchingButton_v1>
             <GithubIcon size={18} className="mr-2" />
             GitHub Repo
-          </Link>
-        </Button>
+          </EyeCatchingButton_v1>
+        </Link>
       </div>
+      <SiteFooter />
     </div>
   );
 };
