@@ -23,11 +23,11 @@ const Navbar = () => {
             src={zippy}
             alt="zippyinv"
           />
-          <Link href="/" className="ml-2">
+          <Link href="/" className="ml-2 z-10">
             z1ppie
           </Link>
         </div>
-        <div className="flex gap-x-2">
+        <div className="flex gap-x-2 z-10">
           <div>
             <ThemeButton />
           </div>

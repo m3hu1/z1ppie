@@ -21,6 +21,7 @@ import FileUploadBtn from "./FUButton";
 import FileDownload from "./FD";
 import ShareLink from "./ShareLink";
 import { useSearchParams } from "next/navigation";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const ShareCard = () => {
   const userDetails = useSocket();
@@ -320,7 +321,7 @@ const ShareCard = () => {
 
   return (
     <>
-      <Card className="sm:max-w-[450px] max-w-[95%]">
+      <Card className="sm:max-w-[450px] max-w-[95%] z-10">
         {}
         <CardContent className="mt-8">
           <form>
@@ -445,11 +446,11 @@ const ShareCard = () => {
           <CardFooter className="flex justify-center">
             <div>
               <Button
-                variant="outline"
-                className=" bg-green-500 text-white hover:bg-green-400"
+                variant="ghost"
+                className=" bg-blue-500 text-white hover:bg-blue-400"
                 onClick={acceptUser}
               >
-                Click here to receive call from {signalingData.from}
+                Click here to pair with {signalingData.from}
               </Button>
             </div>
           </CardFooter>

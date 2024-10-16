@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { GithubIcon } from "lucide-react";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const Home = () => {
   const words = [
@@ -28,22 +29,22 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-[40rem]">
+    <div className="flex flex-col items-center justify-center overflow-hidden h-[40rem]">
       <TypewriterEffectSmooth words={words} />
-      <div className="mt-8 gap-3 flex justify-center">
+      <div className="mt-8 gap-3 flex justify-center z-10">
         <Link href="/share">
           <Button size="lg">Start sharing</Button>
         </Link>
-        
+
         <Button size="lg" variant={"outline"} className="flex items-center">
-        <Link href={"https://github.com/m3hu1/z1ppie"} className="flex items-center">
-                <GithubIcon size={18} className="mr-2" />
-              
-          GitHub Repo
-        </Link>
+          <Link
+            href={"https://github.com/m3hu1/z1ppie"}
+            className="flex items-center"
+          >
+            <GithubIcon size={18} className="mr-2" />
+            GitHub Repo
+          </Link>
         </Button>
-        
-        
       </div>
     </div>
   );
