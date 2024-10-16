@@ -241,7 +241,7 @@ const ShareCard = () => {
       callUser();
     } else {
       setisLoading(false);
-      toast.error("Enter correct Peer's Id");
+      toast.error("Invalid token entered.");
     }
   };
 
@@ -386,10 +386,10 @@ const ShareCard = () => {
                     {isLoading ? (
                       <>
                         <div className="scale-0 hidden dark:flex dark:scale-100">
-                          <TailSpin color="black" height={18} width={18} />
+                          <TailSpin color="white" height={18} width={18} />
                         </div>
                         <div className="scale-100 flex dark:scale-0 dark:hidden">
-                          <TailSpin color="white" height={18} width={18} />
+                          <TailSpin color="black" height={18} width={18} />
                         </div>
                       </>
                     ) : (

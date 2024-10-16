@@ -62,7 +62,6 @@ const ShareLink = ({ userCode }: { userCode: string }) => {
                 <Button
                   type="button"
                   onClick={handleCopyClick}
-                  variant={"outline"}
                   className="px-3"
                 >
                   <Link2 className="h-4 w-4" />
