@@ -9,7 +9,7 @@ const page = () => {
     <Suspense
       fallback={
         <div className="flex items-center justify-center min-h-screen">
-          <Dots_v3 />
+          <Dots_v3 ></Dots_v3>/
         </div>
       }
     >
