@@ -54,6 +54,8 @@ Make sure you have the following installed:
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application in action.
 
+> Note that the socket server is not included in this repository. You can use the socket server provided in the [z1ppie-server](https://github.com/m3hu1/z1ppie-server) repository.
+
 ## Usage
   > Note that both the peers should be on the same network to communicate.
 - Navigate to the home page and click on "Start sharing" to begin.
