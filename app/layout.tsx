@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./ThemeProvider";
 import Navbar from "./Navbar";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,15 +32,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <SparklesCore
-            id="tsparticlesfullpage"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={100}
-            className="absolute inset-0 z-0"
-            particleColor="#FFFFFF"
-          />
           {children}
         </ThemeProvider>
       </body>

@@ -1,11 +1,10 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import { Eye, GithubIcon } from "lucide-react";
+import { GithubIcon } from "lucide-react";
 import { SiteFooter } from "./Footer";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { EyeCatchingButton_v1 } from "@/components/ui/shimmerButton";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const Home = () => {
   const words = [
@@ -31,7 +30,16 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center overflow-hidden h-[40rem]">
+    <div className="flex flex-col items-center justify-center overflow-hidden h-[45rem]">
+      <SparklesCore
+        id="tsparticlesfullpage"
+        background="transparent"
+        minSize={0.6}
+        maxSize={1.4}
+        particleDensity={100}
+        className="absolute inset-0 z-0"
+        particleColor={"#FFFFFF"}
+      />
       <TypewriterEffectSmooth words={words} />
       <div className="mt-8 gap-3 flex justify-center z-10">
         <Link href="/share">
