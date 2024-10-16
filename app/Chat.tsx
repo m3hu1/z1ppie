@@ -59,7 +59,7 @@ const Chat = () => {
   return (
     <>
       {Socket.peerState ? (
-        <div className="flex justify-center sm:w-fit w-full">
+        <div className="flex justify-center sm:w-fit w-full z-10">
           <div className="flex flex-col flex-wrap border rounded-md sm:min-w-[400px] min-w-[95%] min-h-[400px] p-2">
             {}
             <div className="flex-1 overflow-y-auto w-full">
