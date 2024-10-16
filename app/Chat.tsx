@@ -95,7 +95,6 @@ const Chat = () => {
               </div>
               <div className="">
                 <Button
-                  variant={"outline"}
                   className="p-3"
                   onClick={handleSendMessage}
                   ref={btnRef}

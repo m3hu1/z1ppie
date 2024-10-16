@@ -5,7 +5,10 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -22,6 +25,8 @@ import ShareLink from "./ShareLink";
 import { useSearchParams } from "next/navigation";
 import { Dots_v2 } from "@/components/ui/dots2";
 import { Dots_v3 } from "@/components/ui/dots";
+import { EyeCatchingButton_v1 } from "@/components/ui/shimmerButton";
+import { EyeCatchingButton_v2 } from "@/components/ui/shimmerButton2";
 
 const ShareCard = () => {
   const userDetails = useSocket();
@@ -45,14 +50,14 @@ const ShareCard = () => {
   const [setname] = useState<any>();
   const searchParams = useSearchParams();
 
-  const [showContent, setShowContent] = useState(false); // State to control visibility
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowContent(true); // Set to true after 1 second
+      setShowContent(true);
     }, 1000);
 
-    return () => clearTimeout(timer); // Cleanup timer on unmount
+    return () => clearTimeout(timer);
   }, []);
 
   const workerRef = useRef<Worker>();
@@ -77,9 +82,7 @@ const ShareCard = () => {
   }
 
   useEffect(() => {
-    workerRef.current = new Worker(
-      new URL("./w.ts", import.meta.url)
-    );
+    workerRef.current = new Worker(new URL("./w.ts", import.meta.url));
 
     addUserToSocketDB();
 
@@ -145,7 +148,6 @@ const ShareCard = () => {
     });
 
     peer.on("data", (data) => {
-
       const parsedData = JSON.parse(data);
 
       if (parsedData.chunk) {
@@ -332,18 +334,23 @@ const ShareCard = () => {
   return (
     <>
       <Card className="sm:max-w-[450px] max-w-[95%] z-10">
+        <CardHeader>
+          <CardTitle>z1ppie</CardTitle>
+          <CardDescription>
+            Connect to the same network for P2P to work.
+          </CardDescription>
+        </CardHeader>
         {}
-        <CardContent className="mt-8">
+        <CardContent className="mt-1">
           <form>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col gap-y-1">
                 <Label htmlFor="name">My Token</Label>
                 <div className="flex flex-row justify-left items-center space-x-2">
                   <div className="flex border rounded-md px-3 py-2 text-sm h-10 w-full bg-muted">
-                    {showContent ? (userId ? userId : <Dots_v3 />) : <Dots_v3 />}       
+                    {showContent ? userId ? userId : <Dots_v3 /> : <Dots_v3 />}
                   </div>
                   <Button
-                    variant="outline"
                     type="button"
                     className="p-4"
                     onClick={() => CopyToClipboard(userDetails?.userId)}
@@ -370,8 +377,8 @@ const ShareCard = () => {
                     value={partnerId}
                   />
                   <Button
-                    variant="outline"
                     type="button"
+                    variant="outline"
                     className="flex items-center justify-center p-4 w-[160px]"
                     onClick={handleConnectionMaking}
                     disabled={terminateCall}
@@ -379,10 +386,10 @@ const ShareCard = () => {
                     {isLoading ? (
                       <>
                         <div className="scale-0 hidden dark:flex dark:scale-100">
-                          <TailSpin color="white" height={18} width={18} />
+                          <TailSpin color="black" height={18} width={18} />
                         </div>
                         <div className="scale-100 flex dark:scale-0 dark:hidden">
-                          <TailSpin color="black" height={18} width={18} />
+                          <TailSpin color="white" height={18} width={18} />
                         </div>
                       </>
                     ) : (
@@ -396,7 +403,9 @@ const ShareCard = () => {
                 <Label htmlFor="name">Connection Status</Label>
                 <div className="flex flex-row justify-left items-center space-x-2">
                   <div className=" border rounded-lg  px-3 py-2 text-sm h-10 w-full ease-in-out duration-500 transition-all select-none">
-                    {currentConnection ? `Connected to ${partnerId}` : "No connection"}
+                    {currentConnection
+                      ? `Connected to ${partnerId}`
+                      : "No connection"}
                   </div>
                   <>
                     {terminateCall ? (
@@ -418,7 +427,9 @@ const ShareCard = () => {
               {/* file upload */}
               <div className="flex flex-col border rounded-lg  px-3 py-2 text-sm w-full ease-in-out duration-500 transition-all gap-y-2">
                 <div>
-                  <Label className=" font-semibold text-[16px]">Upload</Label>
+                  <Label className=" font-semibold text-[16px]">
+                    Upload a file
+                  </Label>
                 </div>
                 <div>
                   <FileUploadBtn
@@ -455,13 +466,9 @@ const ShareCard = () => {
         {acceptCaller ? (
           <CardFooter className="flex justify-center">
             <div>
-              <Button
-                variant="ghost"
-                className=" bg-blue-500 text-white hover:bg-blue-400"
-                onClick={acceptUser}
-              >
-                Click here to pair with {signalingData.from}
-              </Button>
+              <EyeCatchingButton_v1 onClick={acceptUser}>
+                Click here to connect to {signalingData.from}
+              </EyeCatchingButton_v1>
             </div>
           </CardFooter>
         ) : null}

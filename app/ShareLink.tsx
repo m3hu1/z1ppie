@@ -28,7 +28,6 @@ const ShareLink = ({ userCode }: { userCode: string }) => {
       <Dialog>
         <DialogTrigger asChild>
           <Button
-            variant="outline"
             className="p-3"
             disabled={userCode ? false : true}
           >

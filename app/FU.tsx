@@ -24,7 +24,7 @@ const FileUpload = ({
         <div className="flex">
           <Button
             type="button"
-            variant="outline"
+            
             className="h-[30px] px-2"
             onClick={() => {
               handleClick();

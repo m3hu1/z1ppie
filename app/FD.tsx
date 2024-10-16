@@ -37,7 +37,7 @@ const FileDownload = ({
             <div className="flex">
               <Button
                 type="button"
-                variant="outline"
+                // variant="outline"
                 className="h-[30px] px-2"
                 onClick={() => handleFileDownload(fileRawData, fileName)}
               >

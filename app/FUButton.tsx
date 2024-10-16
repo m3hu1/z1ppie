@@ -22,7 +22,6 @@ const FileUploadBtn = ({
         onChange={(e) => handleFileChange(e)}
       />
       <Button
-        variant="outline"
         type="button"
         onClick={uploadBtn}
         className=" flex gap-x-2"
