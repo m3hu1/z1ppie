@@ -1,14 +1,16 @@
 import Share from "../Share";
 import { SP } from "../SP";
-import React from "react";
+import React, { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 
 const page = () => {
   return (
-    <SP>
-      <Share />
-      <Toaster />
-    </SP>
+    <Suspense fallback={<div>Loading...</div>}>
+      <SP>
+        <Share />
+        <Toaster />
+      </SP>
+    </Suspense>
   );
 };
 

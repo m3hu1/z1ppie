@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { GithubIcon } from "lucide-react";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 const Home = () => {
   const words = [

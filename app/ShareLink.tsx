@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { Input } from "@/components/ui/input";
-import { Copy, Link2, Share } from "lucide-react";
+import { Link2, Share } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import toast from "react-hot-toast";
 import { useTheme } from "next-themes";

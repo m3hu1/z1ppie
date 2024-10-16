@@ -1,7 +1,5 @@
 import React from "react";
 import ThemeButton from "./ThemeButton";
-import { GithubIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import zippy from "@/assets/zippy.png";
 import zippyinv from "@/assets/zippyinv.png";

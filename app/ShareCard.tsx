@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   CardFooter,
-  CardHeader,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -21,7 +20,6 @@ import FileUploadBtn from "./FUButton";
 import FileDownload from "./FD";
 import ShareLink from "./ShareLink";
 import { useSearchParams } from "next/navigation";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 const ShareCard = () => {
   const userDetails = useSocket();
@@ -42,7 +40,7 @@ const ShareCard = () => {
   const [fileNameState, setfileNameState] = useState<any>();
   const [fileSending, setfileSending] = useState(false);
   const [fileReceiving, setfileReceiving] = useState(false);
-  const [name, setname] = useState<any>();
+  const [setname] = useState<any>();
   const searchParams = useSearchParams();
 
   const workerRef = useRef<Worker>();

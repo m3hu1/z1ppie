@@ -1,10 +1,9 @@
 "use client";
-import { customAlphabet, nanoid } from "nanoid";
+import { nanoid } from "nanoid";
 import React, {
   createContext,
   useContext,
   useMemo,
-  useRef,
   useState,
 } from "react";
 import { io } from "socket.io-client";

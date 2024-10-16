@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SendHorizonal } from "lucide-react";
 import { useSocket } from "./SP";
-import partnerId from "./ShareCard";
 
 const Chat = () => {
   const [messages, setMessages] = useState<any[]>([]);
