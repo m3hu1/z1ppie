@@ -16,9 +16,6 @@ export const metadata: Metadata = {
       url: "https://github.com/m3hu1",
     },
   ],
-  icons: {
-    icon: "./zippy.png",
-  },
 };
 
 export default function RootLayout({
