@@ -1,4 +1,4 @@
-// import Share from "@/components/Share";
+import Share from "../Share";
 import { SP } from "../SP";
 import React from "react";
 import { Toaster } from "react-hot-toast";
@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast";
 const page = () => {
   return (
     <SP>
-      {/* <Share /> */}
+      <Share />
       <Toaster />
     </SP>
   );
